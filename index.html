@@ -199,16 +199,13 @@
       }
     });
     try {
-      const res = await fetch('https://dinastia-n8n-webhook.saxddq.easypanel.host/webhook/1cda2574-bcc3-46a1-b87a-b790f504a33f', {
+      await fetch('https://dinastia-n8n-webhook.saxddq.easypanel.host/webhook/1cda2574-bcc3-46a1-b87a-b790f504a33f', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
+        mode: 'no-cors',
         body: JSON.stringify(data)
       });
-      if (res.ok) {
-        showToast();
-      } else {
-        alert('Erro ao enviar. Tente novamente.');
-      }
+      showToast();
     } catch (err) {
       alert('Erro de conexão com o servidor.');
     }
